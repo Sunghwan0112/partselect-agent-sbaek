@@ -7,7 +7,7 @@ function ChatWindow() {
 
   const defaultMessage = [{
     role: "assistant",
-    content: "Hi, how can I help you today?"
+    content: "Hello, and welcome to PartSelect. How may I help you today?"
   }];
 
   const [messages,setMessages] = useState(defaultMessage)
