@@ -1,10 +1,11 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
-import os, logging, sys, re
+import os, logging, sys, re, json
 from dotenv import load_dotenv
 from brave_search import search_partselect
 import requests
+from bs4 import BeautifulSoup
 
 # ------------------ App & Env ------------------
 app = FastAPI()
@@ -24,20 +25,30 @@ logger = logging.getLogger("chat_backend")
 # ------------------ State ------------------
 last_part_number: str | None = None
 
+# ------------------ Repair Guides Knowledge ------------------
+def load_repair_guides() -> str:
+    base_dir = os.path.dirname(__file__)
+    json_path = os.path.abspath(os.path.join(base_dir, "..", "data", "repair_guides.json"))
+    with open(json_path, "r") as f:
+        guides = json.load(f)
+    parts = ["You also have access to official repair guides from PartSelect for common appliance symptoms:"]
+    for category, items in guides.items():
+        for symptom, url in items.items():
+            parts.append(f"- For {category} issues like '{symptom}', refer to: {url}")
+    return "\n".join(parts)
+
 # ------------------ ScraperAPI Compatibility Check ------------------
 API_KEY = "294bc68b68df9e77e055922f37a0cb68"
 SCRAPER_ENDPOINT = "https://api.scraperapi.com/"
 
-
 def check_compatibility_scraperapi(part_number: str, model_number: str) -> dict:
-    """Return True/False by fetching the model‑part page via ScraperAPI."""
     target_url = f"https://www.partselect.com/Models/{model_number}/Parts/?SearchTerm={part_number}"
     payload = {"api_key": API_KEY, "url": target_url}
     try:
         resp = requests.get(SCRAPER_ENDPOINT, params=payload, timeout=15)
         resp.raise_for_status()
         html_text = resp.text.lower()
-        logger.debug("🔍 ScraperAPI snippet: %s", html_text[:400])
+        logger.debug("\U0001f50d ScraperAPI snippet: %s", html_text[:400])
         if any(err in html_text for err in [
             "sorry, we couldn't find any parts that matched",
             "access denied",
@@ -50,7 +61,6 @@ def check_compatibility_scraperapi(part_number: str, model_number: str) -> dict:
         return {"compatible": False, "source": target_url, "snippet": f"Scraper error: {e}"}
 
 # ------------------ Helper ------------------
-
 def extract_part_name(title: str) -> str:
     m = re.search(r"–\s*(.+?)\s*–", title)
     return m.group(1) if m else title
@@ -58,36 +68,33 @@ def extract_part_name(title: str) -> str:
 # ------------------ Chat Endpoint ------------------
 BASE_RULES = (
     "You are a friendly and helpful assistant for the PartSelect e-commerce website. "
-    "You ONLY answer questions about refrigerator or dishwasher parts, "
-    "If the part is NOT compatible, simply state so in one sentence and do NOT suggest alternative parts unless the user explicitly requests recommendations. "
-    "Politely refuse off‑topic queries."
+    "You ONLY answer questions about refrigerator or dishwasher parts. "
+    "If the part is NOT compatible, simply state so and do NOT suggest alternative parts unless the user explicitly asks. "
+    "Politely refuse off‑topic queries. "
+    + load_repair_guides()
 )
 
 @app.post("/api/chat")
 async def chat_endpoint(request: Request):
     global last_part_number
-
     data = await request.json()
     user_msg = data.get("message", "")
     logger.debug("USER: %r", user_msg)
 
     messages = [{"role": "system", "content": BASE_RULES}]
 
-    # 1️⃣ Extract part number from current message
     part_match = re.search(r"\b(PS\d{5,})\b", user_msg)
     current_part = part_match.group(1) if part_match else None
     if current_part:
         last_part_number = current_part
-        logger.debug("📌 Current part: %s", current_part)
+        logger.debug("\ud83d\udccc Current part: %s", current_part)
 
-    # 2️⃣ Determine if this message is a compatibility question
     model_match = re.search(r"\b(W[A-Z0-9]{5,})\b", user_msg, re.I)
     is_compat_q = bool(re.search(r"\b(is|compatible|fit|works|work with)\b", user_msg.lower()))
     refers_prev = bool(re.search(r"\b(this|it|part|one|item)\b", user_msg.lower()))
 
     part_for_check = current_part or (last_part_number if refers_prev and is_compat_q else None)
 
-    # 3️⃣ Compatibility check via ScraperAPI
     if model_match and part_for_check:
         model_number = model_match.group(1).upper()
         result = check_compatibility_scraperapi(part_for_check, model_number)
@@ -100,7 +107,6 @@ async def chat_endpoint(request: Request):
             ),
         })
 
-    # 4️⃣ Part info grounding (search by part only)
     if current_part:
         p_info = search_partselect(current_part)
         if p_info:
@@ -112,10 +118,8 @@ async def chat_endpoint(request: Request):
                 ),
             })
 
-    # 5️⃣ Append user question
     messages.append({"role": "user", "content": user_msg})
 
-    # 6️⃣ Ask Deepseek model
     try:
         reply = client.chat.completions.create(
             model=MODEL_NAME,
@@ -127,3 +131,21 @@ async def chat_endpoint(request: Request):
     except Exception as e:
         logger.exception("Model call failed")
         return {"reply": f"Error: {e}"}
+
+# ------------------ Page Summarization Endpoint ------------------
+@app.get("/api/summarize")
+def summarize_page(url: str):
+    try:
+        html = requests.get(SCRAPER_ENDPOINT, params={"api_key": API_KEY, "url": url}, timeout=15).text
+        soup = BeautifulSoup(html, "html.parser")
+        clean = soup.get_text("\n", strip=True)
+        logger.debug("\U0001f9fc Clean text len: %d", len(clean))
+        prompt = [
+            {"role": "system", "content": "Summarize this PartSelect repair page for a customer in plain language."},
+            {"role": "user", "content": clean[:5000]}
+        ]
+        summary = client.chat.completions.create(model=MODEL_NAME, messages=prompt, temperature=0.2)
+        return {"summary": summary.choices[0].message.content.strip()}
+    except Exception as e:
+        logger.exception("Summarization failed")
+        return {"summary": f"❌ Error: {e}"}
