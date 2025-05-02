@@ -1,7 +1,7 @@
 from fastapi import FastAPI, Request
 from fastapi.middleware.cors import CORSMiddleware
 from openai import OpenAI
-import os, json, logging, sys, re
+import os, logging, sys, re
 from dotenv import load_dotenv
 from brave_search import search_partselect
 import requests
@@ -22,138 +22,108 @@ logging.basicConfig(
 logger = logging.getLogger("chat_backend")
 
 # ------------------ State ------------------
-last_part_number = None
+last_part_number: str | None = None
 
 # ------------------ ScraperAPI Compatibility Check ------------------
-def check_compatibility_scraperapi(part_number: str, model_number: str) -> dict:
-    """
-    Use ScraperAPI (simple GET via API key and target URL) to fetch the PartSelect page
-    and check if the error message appears indicating incompatibility.
-    """
-    api_key = "294bc68b68df9e77e055922f37a0cb68"
-    target_url = f"https://www.partselect.com/Models/{model_number}/Parts/?SearchTerm={part_number}"
-    payload = { 'api_key': api_key, 'url': target_url }
+API_KEY = "294bc68b68df9e77e055922f37a0cb68"
+SCRAPER_ENDPOINT = "https://api.scraperapi.com/"
 
+
+def check_compatibility_scraperapi(part_number: str, model_number: str) -> dict:
+    """Return True/False by fetching the model‑part page via ScraperAPI."""
+    target_url = f"https://www.partselect.com/Models/{model_number}/Parts/?SearchTerm={part_number}"
+    payload = {"api_key": API_KEY, "url": target_url}
     try:
-        resp = requests.get("https://api.scraperapi.com/", params=payload)
+        resp = requests.get(SCRAPER_ENDPOINT, params=payload, timeout=15)
         resp.raise_for_status()
         html_text = resp.text.lower()
-
-        logger.debug(f"🔍 ScraperAPI snippet: {html_text[:400]}")
-
-        error_phrases = [
+        logger.debug("🔍 ScraperAPI snippet: %s", html_text[:400])
+        if any(err in html_text for err in [
             "sorry, we couldn't find any parts that matched",
             "access denied",
             "you don't have permission to access",
-        ]
-        if any(err in html_text for err in error_phrases):
-            return {
-                "compatible": False,
-                "source": target_url,
-                "snippet": "No parts matched or access denied.",
-            }
-
-        return {
-            "compatible": True,
-            "source": target_url,
-            "snippet": "Compatible: page contains part results.",
-        }
-
+        ]):
+            return {"compatible": False, "source": target_url, "snippet": "No parts matched."}
+        return {"compatible": True, "source": target_url, "snippet": "Part list found."}
     except Exception as e:
-        logger.warning(f"ScraperAPI error: {e}")
-        return {
-            "compatible": False,
-            "source": target_url,
-            "snippet": f"❌ ScraperAPI error: {e}",
-        }
+        logger.warning("ScraperAPI error: %s", e)
+        return {"compatible": False, "source": target_url, "snippet": f"Scraper error: {e}"}
 
-        return {
-            "compatible": True,
-            "source": target_url,
-            "snippet": "Compatible: part matched and page loaded successfully.",
-        }
+# ------------------ Helper ------------------
 
-    except Exception as e:
-        logger.warning(f"ScraperAPI failed: {e}")
-        return {
-            "compatible": False,
-            "source": target_url,
-            "snippet": f"❌ ScraperAPI error: {e}",
-        }
+def extract_part_name(title: str) -> str:
+    m = re.search(r"–\s*(.+?)\s*–", title)
+    return m.group(1) if m else title
 
 # ------------------ Chat Endpoint ------------------
+BASE_RULES = (
+    "You are a friendly and helpful assistant for the PartSelect e-commerce website. "
+    "You ONLY answer questions about refrigerator or dishwasher parts, "
+    "If the part is NOT compatible, simply state so in one sentence and do NOT suggest alternative parts unless the user explicitly requests recommendations. "
+    "Politely refuse off‑topic queries."
+)
+
 @app.post("/api/chat")
 async def chat_endpoint(request: Request):
     global last_part_number
 
     data = await request.json()
     user_msg = data.get("message", "")
-    logger.debug(f"USER: {user_msg!r}")
+    logger.debug("USER: %r", user_msg)
 
-    messages = [{"role": "system", "content": (
-        "You are a helpful assistant for PartSelect. You ONLY answer questions about appliance parts, "
-        "compatibility, and installation. Politely refuse off-topic queries."
-    )}]
+    messages = [{"role": "system", "content": BASE_RULES}]
 
-    # Step 1: Extract part number
-    current_part_match = re.search(r"\b(PS\d{5,})\b", user_msg)
-    current_part_number = current_part_match.group(1) if current_part_match else None
+    # 1️⃣ Extract part number from current message
+    part_match = re.search(r"\b(PS\d{5,})\b", user_msg)
+    current_part = part_match.group(1) if part_match else None
+    if current_part:
+        last_part_number = current_part
+        logger.debug("📌 Current part: %s", current_part)
 
-    if current_part_number:
-        logger.debug(f"📌 Detected part number in current message: {current_part_number}")
-        last_part_number = current_part_number
-
-    # Step 2: Compatibility check
+    # 2️⃣ Determine if this message is a compatibility question
     model_match = re.search(r"\b(W[A-Z0-9]{5,})\b", user_msg, re.I)
-    wants_compat = re.search(r"\b(is|compatible|fit|works|work with)\b", user_msg.lower())
-    refers_to_last = re.search(r"\b(this|it|part|one|item)\b", user_msg.lower())
+    is_compat_q = bool(re.search(r"\b(is|compatible|fit|works|work with)\b", user_msg.lower()))
+    refers_prev = bool(re.search(r"\b(this|it|part|one|item)\b", user_msg.lower()))
 
-    part_number_for_check = current_part_number if current_part_number else (last_part_number if refers_to_last and wants_compat else None)
+    part_for_check = current_part or (last_part_number if refers_prev and is_compat_q else None)
 
-    if model_match and part_number_for_check:
+    # 3️⃣ Compatibility check via ScraperAPI
+    if model_match and part_for_check:
         model_number = model_match.group(1).upper()
-        logger.debug(f"🔁 Compatibility check: {part_number_for_check} + {model_number}")
-
-        result = check_compatibility_scraperapi(part_number_for_check, model_number)
-
+        result = check_compatibility_scraperapi(part_for_check, model_number)
         messages.append({
             "role": "system",
             "content": (
-                f"[COMPATIBILITY CHECK]\n"
-                f"Model: {model_number}\n"
-                f"Part: {part_number_for_check}\n"
-                f"Compatible: {'✅ YES' if result['compatible'] else '❌ NO'}\n"
-                f"URL: {result['source']}\n"
-                f"Snippet: {result['snippet']}"
-            )
+                f"[COMPATIBILITY]\nModel: {model_number}\nPart: {part_for_check}\n"
+                f"Compatible: {'YES' if result['compatible'] else 'NO'}\n"
+                f"Evidence: {result['snippet']}"
+            ),
         })
 
-    # Step 3: Part info grounding
-    part_info = search_partselect(user_msg)
-    if part_info:
-        messages.append({
-            "role": "system",
-            "content": (
-                f"[PART INFO FOUND VIA SEARCH]\n"
-                f"Title: {part_info['title']}\n"
-                f"URL: {part_info['url']}\n"
-                f"Snippet: {part_info['snippet']}"
-            )
-        })
+    # 4️⃣ Part info grounding (search by part only)
+    if current_part:
+        p_info = search_partselect(current_part)
+        if p_info:
+            part_name = extract_part_name(p_info["title"])
+            messages.append({
+                "role": "system",
+                "content": (
+                    f"[PART FACT]\nPart {current_part} is titled '{p_info['title']}', which identifies it as a {part_name}."
+                ),
+            })
 
-    # Step 4: Final model call
+    # 5️⃣ Append user question
     messages.append({"role": "user", "content": user_msg})
 
+    # 6️⃣ Ask Deepseek model
     try:
-        response = client.chat.completions.create(
+        reply = client.chat.completions.create(
             model=MODEL_NAME,
             messages=messages,
-            temperature=0.2,
-        )
-        reply = response.choices[0].message.content.strip()
-        logger.debug("FINAL REPLY: %s", reply)
+            temperature=0.1,
+        ).choices[0].message.content.strip()
+        logger.debug("REPLY: %s", reply)
         return {"reply": reply}
-
     except Exception as e:
-        logger.exception("🔥 Exception during model call")
-        return {"reply": f"⚠️ Error: {str(e)}"}
+        logger.exception("Model call failed")
+        return {"reply": f"Error: {e}"}
