@@ -94,8 +94,8 @@ Currently, the assistant **generates fake order numbers** to help simulate real 
 ### 1. Clone the Repo
 
 ```bash
-git clone https://github.com/your-username/partselect-chat-agent.git
-cd partselect-chat-agent
+git clone https://github.com/Sunghwan0112/partselect-agent-sbaek.git
+cd partselect-agent-sbaek
 ```
 
 ### 2. Start the Backend First
