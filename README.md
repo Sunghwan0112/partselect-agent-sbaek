@@ -19,7 +19,8 @@ This is a React + FastAPI based AI chatbot for assisting customers with refriger
 
 ## 🖼️ Demo Preview
 
-Include a screenshot like `screenshot.png` here if available.
+![Demo Preview](screenshot.png)
+
 
 ---
 
