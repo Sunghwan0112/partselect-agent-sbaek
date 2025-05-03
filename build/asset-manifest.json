@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/partselect-agent-sbaek/static/css/main.497e45b1.css",
+    "main.css": "/partselect-agent-sbaek/static/css/main.e6c3e720.css",
     "main.js": "/partselect-agent-sbaek/static/js/main.6169e9dc.js",
     "static/js/787.12438761.chunk.js": "/partselect-agent-sbaek/static/js/787.12438761.chunk.js",
     "index.html": "/partselect-agent-sbaek/index.html",
-    "main.497e45b1.css.map": "/partselect-agent-sbaek/static/css/main.497e45b1.css.map",
+    "main.e6c3e720.css.map": "/partselect-agent-sbaek/static/css/main.e6c3e720.css.map",
     "main.6169e9dc.js.map": "/partselect-agent-sbaek/static/js/main.6169e9dc.js.map",
     "787.12438761.chunk.js.map": "/partselect-agent-sbaek/static/js/787.12438761.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.497e45b1.css",
+    "static/css/main.e6c3e720.css",
     "static/js/main.6169e9dc.js"
   ]
 }
