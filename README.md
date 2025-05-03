@@ -98,25 +98,30 @@ git clone https://github.com/your-username/partselect-chat-agent.git
 cd partselect-chat-agent
 ```
 
-### 2. Install Frontend
+### 2. Start the Backend First
 
-```bash
-npm install
-npm start
-```
-
-Runs at: `http://localhost:3000`
-
-### 3. Backend Setup
-
-Make sure Python ≥ 3.10 is installed:
+Inside the `./backend` folder, make sure Python ≥ 3.10 is installed and run:
 
 ```bash
 pip install -r requirements.txt
 uvicorn main:app --reload
 ```
 
+This starts the FastAPI backend server with auto-reload enabled for development.
+⚠️ **Make sure the backend is running before starting the frontend** — some features depend on the backend being active.
+
 Runs at: `http://localhost:8000`
+
+### 3. Install and Start the Frontend
+
+From the root directory (where `package.json` is located), run:
+
+```bash
+npm install
+npm start
+```
+
+This starts the React app on: `http://localhost:3000`
 
 ---
 
