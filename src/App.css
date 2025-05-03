@@ -3,10 +3,24 @@
 * {
   font-family: "Inter", sans-serif;
   font-size: 14px;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Inter", sans-serif;
+  margin: 0;
+  background-color: #f5f7fa;
 }
 
 .App {
-  background-color: white;
+  padding-top: 60px;
+  min-height: 100vh;
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .heading {
@@ -14,12 +28,24 @@
   top: 0;
   left: 0;
   width: 100%;
-  background: rgba(255, 255, 255); 
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
-  display: flex;
+  background: #ffffff;
+  box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.1);
   font-weight: 700;
   font-size: 16px;
+  display: flex;
   justify-content: center;
   align-items: center;
   height: 60px;
+  z-index: 1000;
 }
+
+.chat-wrapper {
+  background-color: #ffffff;
+  width: 100%;
+  max-width: 800px;
+  margin: 0 auto;
+  border-radius: 8px;
+  padding: 24px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+

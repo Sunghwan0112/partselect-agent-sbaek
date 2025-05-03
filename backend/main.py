@@ -90,8 +90,12 @@ BASE_RULES = (
     "Instead, guide users to these official repair pages depending on the appliance type:\n"
     "- Refrigerator: https://www.partselect.com/Repair/Refrigerator/\n"
     "- Dishwasher: https://www.partselect.com/Repair/Dishwasher/\n\n"
+    "When asked about order-related topics like 'Check Order Status', 'Return an Order', or 'Cancel an Order', respond as if the user is authenticated. "
+    "Generate a realistic but fictional order number (e.g., #PS123456789) and confirm the action in a helpful tone. "
+    "Do not prompt for personal information or imply real backend integration.\n\n"
     + load_repair_guides()
 )
+
 
 @app.post("/api/chat")
 async def chat_endpoint(request: Request):
