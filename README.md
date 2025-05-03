@@ -54,7 +54,7 @@ https://www.partselect.com/Models/{model}/Parts/?SearchTerm={part}
 ```
 
 - If parts appear: ✅ compatible
-- If “no parts matched” appears: ❌ not compatible
+- If “sorry, we couldn't find any parts that matched” appears: ❌ not compatible
 
 The result is embedded into the system message for the LLM to reason with.
 
