@@ -1,70 +1,129 @@
-# Getting Started with Create React App
+# PartSelect AI Assistant 🤖
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This is a React + FastAPI based AI chatbot for assisting customers with refrigerator and dishwasher part questions from the [PartSelect](https://www.partselect.com) website. It includes product compatibility checking, repair guide suggestions, and common customer service options.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🧠 Features
 
-### `npm start`
+- Natural language understanding using LLM (DeepSeek Chat API)
+- Answers only relevant refrigerator and dishwasher part queries
+- Rejects off-topic or unsupported requests
+- Checks part compatibility with a given model via [PartSelect](https://www.partselect.com)
+- Suggests official repair pages when relevant
+- First-time UI with quick-start buttons and animated robot thinking state
+- Markdown rendering (hyperlinks, formatting)
+- Chat interface auto-scrolls to latest message
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🖼️ Demo Preview
 
-### `npm test`
+Include a screenshot like `screenshot.png` here if available.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## 📦 Tech Stack
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+| Layer         | Tech             |
+|---------------|------------------|
+| Frontend      | React (CRA), CSS |
+| UI Components | Ant Design       |
+| Backend       | FastAPI (Python) |
+| LLM API       | DeepSeek Chat    |
+| Data Source   | PartSelect.com   |
+| Search        | Brave Search API |
+| Hosting       | GitHub Pages (Frontend Only) |
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+---
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## 🛠️ Local Development Setup
 
-### `npm run eject`
+### 1. Clone the Repo
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+```bash
+git clone https://github.com/your-username/partselect-chat-agent.git
+cd partselect-chat-agent
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### 2. Install React Dependencies
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```bash
+npm install
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Set Up Backend
 
-## Learn More
+Make sure you have Python + FastAPI environment ready:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+pip install -r requirements.txt
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Start the FastAPI server:
 
-### Code Splitting
+```bash
+uvicorn main:app --reload
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+It runs on `http://localhost:8000`.
 
-### Analyzing the Bundle Size
+### 4. Run React Frontend
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+```bash
+npm start
+```
 
-### Making a Progressive Web App
+It runs on `http://localhost:3000`.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+---
 
-### Advanced Configuration
+## 🚀 Production Build
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+To build the React app:
 
-### Deployment
+```bash
+npm run build
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Then deploy `build/` to any static site host (e.g., GitHub Pages, Vercel).  
+Note: The backend must also be deployed separately.
 
-### `npm run build` fails to minify
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 🔐 Deployment Notes
+
+- GitHub Pages can host the **frontend only**.
+- The backend must be hosted on a public server (e.g., Render, Fly.io, or self-hosted).
+
+---
+
+## 🧪 Testing Tips
+
+- Try part numbers like `PS3406971`
+- Try model numbers like `FFTR2021TS0`
+- Ask questions like:
+  - "Is this part compatible with FFTR2021TS0?"
+  - "My Whirlpool fridge is leaking water"
+- Off-topic questions are rejected politely
+
+---
+
+## 📁 Environment Variables
+
+Create a `.env` file in your backend directory:
+
+```env
+DEEPSEEK_API_KEY=your_deepseek_api_key
+BRAVE_API_KEY=your_brave_api_key
+```
+
+In your frontend, set `REACT_APP_API_URL=http://localhost:8000` for development.
+
+---
+
+## 🙋‍♂️ Maintainer
+
+Built by Sunghwan Baek @ Carnegie Mellon University  
+For contributions or issues, open a GitHub Issue or PR.
+
