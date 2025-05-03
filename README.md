@@ -159,9 +159,3 @@ REACT_APP_API_URL=http://localhost:8000
 
 Built by **Sunghwan Baek** @ Carnegie Mellon University  
 sunghwab@andrew.cmu.edu
-
----
-
-## 📝 License
-
-MIT License. This project is independent and not affiliated with PartSelect.com.
