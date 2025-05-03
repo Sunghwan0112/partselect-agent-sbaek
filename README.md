@@ -127,8 +127,8 @@ This starts the React app on: `http://localhost:3000`
 
 ## 📁 Environment Variables
 
-Create a `.env` in the backend folder:
-
+I’ve included my API keys in the repo for code review purposes, but I kindly ask that you don’t overuse them.
+If you’d like to run the system more extensively, please replace them with your own keys in the .env file:
 ```env
 DEEPSEEK_API_KEY=your_deepseek_api_key
 BRAVE_API_KEY=your_brave_api_key
