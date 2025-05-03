@@ -1,0 +1,34 @@
+### **How to Fix a Refrigerator That’s Not Dispensing Water**  
+
+#### **1. Check and Replace the Water Filter**  
+- **Locate the filter** (common spots: inside the fridge, behind the base grill, or in the water line).  
+- **Remove the old filter** (follow your model’s instructions—some twist out, others require disconnecting the water line).  
+- **Install a new filter** (ensure it’s properly seated and locked in place).  
+- **Run water for a few minutes** to flush air and debris from the system.  
+
+#### **2. Inspect the Water Inlet Valve**  
+- **Unplug the fridge** for safety.  
+- **Locate the inlet valve** (usually at the back or bottom of the fridge).  
+- **Check for power** using a multimeter (should read 120V when the dispenser is activated).  
+- **Test water flow**—disconnect the supply line and check for blockages.  
+- **Replace the valve** if it’s faulty or not opening.  
+
+#### **3. Test the Water Dispenser Actuator (Button or Lever)**  
+- **Press the dispenser button**—listen for a click (if no sound, the switch may be faulty).  
+- **Inspect for physical damage** (cracks, sticking, or worn-out parts).  
+- **Replace the actuator** if it doesn’t engage properly.  
+
+#### **4. Check the Micro Switch**  
+- **Locate the switch** (often behind the dispenser panel).  
+- **Test with a multimeter**—should show continuity when pressed.  
+- **Replace the switch** if it fails the test.  
+
+#### **5. Examine the Dispenser Control Board**  
+- **Unplug the fridge** before inspection.  
+- **Look for burnt components or loose connections**.  
+- **Reset the board** (some models have a reset button).  
+- **Replace the board** if it’s malfunctioning.  
+
+**Tip:** If the issue persists after these steps, check for frozen water lines (defrost the fridge) or consult a professional.  
+
+For model-specific guidance, refer to your owner’s manual or manufacturer’s instructions.

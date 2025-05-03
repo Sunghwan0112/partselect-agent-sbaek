@@ -1,0 +1,26 @@
+### **How to Fix a Refrigerator Light That’s Not Working**  
+
+#### **1. Check the Light Bulb**  
+- **Visually inspect** the bulb for a broken filament.  
+- **Test with a multimeter** (if available):  
+  - Remove the bulb.  
+  - Set the multimeter to **Rx1 (ohms)**.  
+  - Place one probe on the **bottom** of the bulb and the other on the **threading**.  
+  - If the reading shows **infinity (no continuity)**, replace the bulb.  
+- **Quick fix**: Simply replace the bulb with a new one.  
+
+#### **2. Inspect the Light Socket**  
+- **Unplug the fridge** before checking (safety first!).  
+- Look for **discolored or damaged terminals** in the socket.  
+- If the socket appears **burnt or loose**, replace it.  
+
+#### **3. Test the Door Light Switch**  
+- The switch turns the light on/off when the door opens/closes.  
+- **Press the switch manually** (with the door open) to see if the light turns on.  
+- If the light **doesn’t respond**, the switch may be faulty and need replacement.  
+
+#### **Next Steps**  
+- If none of these steps fix the issue, further electrical troubleshooting may be needed.  
+- **Need parts?** Search for your fridge model to find the correct replacement bulb, socket, or switch.  
+
+🔧 **Quick Tip:** Always unplug the fridge before working on electrical components!

@@ -1,0 +1,30 @@
+### **How to Fix a Refrigerator That’s Too Cold**  
+
+#### **1. Check the Air Inlet Damper or Baffle**  
+- **Unplug the refrigerator** for safety.  
+- Locate the **damper or baffle** (where cold air enters the fridge).  
+- Inspect for **damage or misalignment**.  
+- Ensure the **control knob moves freely** and the linkage isn’t broken.  
+- If damaged, **replace the damper or baffle**.  
+
+#### **2. Test the Temperature Sensor or Thermistor**  
+- Unplug the fridge.  
+- Locate the **temperature sensor** (usually near the damper or inside the fridge).  
+- Use a **multimeter** to check for proper resistance (refer to your fridge’s manual for specs).  
+- If faulty, **replace the sensor**.  
+
+#### **3. Inspect the Main Control Board**  
+- Unplug the refrigerator.  
+- Locate the **control board** (often behind the fridge or inside the control panel).  
+- Check for **burn marks, loose wires, or damaged components**.  
+- If defective, **replace the control board**.  
+
+#### **4. Adjust or Replace the Cold Control/Temperature Control**  
+- Unplug the fridge.  
+- Locate the **temperature control knob or digital panel**.  
+- Test the control with a multimeter (if applicable).  
+- If the control is faulty or stuck, **replace it**.  
+
+**Note:** If unsure about any step, consult a professional technician.  
+
+Would you like help finding replacement parts? Let us know!

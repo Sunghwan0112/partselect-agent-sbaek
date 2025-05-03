@@ -1,0 +1,26 @@
+### **How to Fix a Noisy Dishwasher**  
+
+#### **1. Check the Pump**  
+- **Unplug the dishwasher** for safety.  
+- **Locate the pump** (usually behind the lower access panel).  
+- **Test the pump with a multimeter**:  
+  - Set the multimeter to **Rx1 (resistance mode)**.  
+  - Place probes on the pump’s terminals—**a reading near zero means it’s working**.  
+  - Check for a ground issue by touching one probe to a terminal and the other to the pump’s metal housing—**no reading should appear**.  
+- **If the pump fails the test**, replace it.  
+
+#### **2. Inspect the Wash Arm Bearing Ring & Spray Arm Seal**  
+- **Remove the lower spray arm** (twist or unclip it).  
+- **Check the bearing ring and seal** for cracks, wear, or debris.  
+- **Clean or replace** damaged parts if needed.  
+
+#### **3. Examine the Spray Arms**  
+- **Remove the spray arms** (top and bottom).  
+- **Check for clogs** in the spray holes—clean them with a toothpick or soft brush.  
+- **Ensure they spin freely**—if loose or damaged, replace them.  
+
+#### **4. Reassemble & Test**  
+- **Reinstall all parts securely**.  
+- **Run a test cycle** to check if the noise is gone.  
+
+If the noise persists, further diagnosis may be needed. Let us know if you need more help!

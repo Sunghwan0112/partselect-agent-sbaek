@@ -1,0 +1,42 @@
+### **How to Fix a Leaking Dishwasher**  
+
+#### **1. Check the Pump & Pump Seal**  
+- **Step 1:** Unplug the dishwasher or turn off power at the breaker.  
+- **Step 2:** Remove the lower access panel to locate the pump.  
+- **Step 3:** Inspect the pump for cracks or damage.  
+- **Step 4:** Test the pump with a multimeter (set to Rx1):  
+  - Touch probes to the terminals—should read near zero.  
+  - Check for grounding by touching one probe to a terminal and the other to the pump’s metal housing (should show no reading).  
+- **Step 5:** If faulty, replace the pump.  
+
+#### **2. Inspect the Door Gasket**  
+- **Step 1:** Check the rubber seal around the door for tears or gaps.  
+- **Step 2:** Clean any debris or food particles stuck to the gasket.  
+- **Step 3:** If damaged, replace the gasket.  
+
+#### **3. Examine the Water Inlet Valve**  
+- **Step 1:** Locate the inlet valve (usually at the bottom front).  
+- **Step 2:** Check for cracks or leaks where the water supply connects.  
+- **Step 3:** If leaking, replace the valve.  
+
+#### **4. Check Dispensers & Grommets**  
+- **Step 1:** Inspect detergent and rinse aid dispensers for cracks.  
+- **Step 2:** Look at the grommets (seals) around them—replace if worn.  
+
+#### **5. Inspect Spray Arms**  
+- **Step 1:** Remove the lower spray arm and check for cracks or clogs.  
+- **Step 2:** Clean any debris from the spray holes.  
+- **Step 3:** Replace if damaged.  
+
+#### **6. Test the Float & Float Switch**  
+- **Step 1:** Locate the float (usually at the bottom of the tub).  
+- **Step 2:** Ensure it moves freely and isn’t stuck.  
+- **Step 3:** If defective, replace the float or switch.  
+
+#### **7. Tighten Hose Clamps & Check Hoses**  
+- **Step 1:** Inspect drain and supply hoses for cracks or loose connections.  
+- **Step 2:** Tighten hose clamps or replace hoses if leaking.  
+
+**Tip:** After repairs, run a test cycle with a towel underneath to confirm the leak is fixed.  
+
+For replacement parts, refer to your dishwasher’s model number.

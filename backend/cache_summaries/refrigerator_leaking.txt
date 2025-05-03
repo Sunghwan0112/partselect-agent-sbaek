@@ -1,0 +1,30 @@
+### **How to Fix a Leaking Refrigerator**  
+
+#### **1. Check the Door Gaskets/Seals**  
+- **Unplug the refrigerator** for safety.  
+- Inspect the rubber seals around the fridge and freezer doors for:  
+  - Cracks, tears, or warping  
+  - Mold or discoloration  
+  - Weak spots that prevent a tight seal  
+- If damaged, **replace the gaskets** to ensure a proper seal.  
+
+#### **2. Inspect the Water Inlet Valve** (For fridges with ice/water dispensers)  
+- **Turn off the water supply** to the fridge.  
+- Locate the **water inlet valve** (usually at the back or bottom).  
+- Use a **multimeter** to test for continuity:  
+  - Disconnect the valve’s wires.  
+  - Set the multimeter to **ohms (Ω)**.  
+  - Place probes on the valve’s terminals—**a reading of 200–500Ω means it’s working**. No reading? **Replace the valve**.  
+- Check for **cracks or leaks** in the valve or hoses.  
+
+#### **3. Examine the Ice Maker Assembly**  
+- If leaking is near the ice maker:  
+  - Check for **cracked or misaligned water lines**.  
+  - Ensure the **ice maker fill tube isn’t frozen or clogged**.  
+  - If the ice maker is overflowing, the **water inlet valve may be faulty** (see Step 2).  
+
+#### **Next Steps**  
+- If the issue persists, check the **defrost drain** (clogged drains can cause leaks inside the fridge).  
+- For persistent leaks, consider **professional repair** or further diagnostics.  
+
+**Need parts?** Search for your model number to find the right replacement.

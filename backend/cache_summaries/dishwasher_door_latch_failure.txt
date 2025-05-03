@@ -1,0 +1,23 @@
+### **How to Fix a Dishwasher Door Latch**  
+
+#### **Step 1: Inspect the Door Catch**  
+- Locate the **door catch** (attached to the top of the dishwasher tub).  
+- Check if it’s properly adjusted—misalignment can prevent the latch from engaging.  
+
+#### **Step 2: Test the Door Latch Assembly**  
+1. **Unplug the dishwasher** for safety.  
+2. Remove the **inner door panel** to access the latch assembly.  
+3. Check if the door catch mechanically activates the switches.  
+
+#### **Step 3: Test for Continuity (If Needed)**  
+- Use a **multimeter** set to **Rx1**.  
+- Touch the probes to the switch terminals—a reading near **zero** means it’s working.  
+- If the reading is anything else, the **latch assembly needs replacement**.  
+
+#### **Step 4: Replace the Door Latch (If Broken)**  
+- Order a **replacement door latch assembly** if testing confirms failure.  
+- Install the new latch, ensuring proper alignment with the door catch.  
+
+**Need help finding your model number?** Check the dishwasher’s frame or door edge.  
+
+🔧 **For replacement parts, visit our [Dishwasher Latches section](#).**

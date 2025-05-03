@@ -1,0 +1,59 @@
+### **How to Fix a Dishwasher That Won’t Start**  
+
+#### **1. Check the Door Latch or Door Latch Switch**  
+- **Issue:** If the door latch is broken or the switches are faulty, the dishwasher won’t start.  
+- **Steps to Fix:**  
+  1. **Unplug the dishwasher** for safety.  
+  2. Remove the **inner door panel** to access the latch assembly (usually at the top of the door).  
+  3. Check if the **door catch properly activates the switches** when closed.  
+  4. **Test the switches with a multimeter** (set to Rx1):  
+     - Touch the probes to the switch terminals.  
+     - A reading of **zero or near zero** means it’s working.  
+     - Any other reading means the **switch is faulty** and needs replacement.  
+  5. Replace the **door latch assembly** if defective.  
+
+#### **2. Inspect the Timer or Electronic Control**  
+- **Issue:** A malfunctioning timer or control board can prevent the dishwasher from starting.  
+- **Steps to Fix:**  
+  1. **Unplug the dishwasher.**  
+  2. Locate the **timer or control panel** (varies by model).  
+  3. Check for **burn marks, loose wires, or damaged components.**  
+  4. If faulty, replace the **timer or control board.**  
+
+#### **3. Test the Selector Switch**  
+- **Issue:** A defective selector switch (cycle or start button) may stop the dishwasher from running.  
+- **Steps to Fix:**  
+  1. **Unplug the dishwasher.**  
+  2. Remove the **control panel** to access the switch.  
+  3. Test for **continuity with a multimeter** when pressed.  
+  4. Replace if **no continuity** is detected.  
+
+#### **4. Check the Motor Start Relay**  
+- **Issue:** A bad relay can prevent the motor from starting.  
+- **Steps to Fix:**  
+  1. **Disconnect power.**  
+  2. Locate the **relay near the motor.**  
+  3. Test for **continuity** with a multimeter.  
+  4. Replace if **defective.**  
+
+#### **5. Inspect the Thermal Fuse**  
+- **Issue:** A blown thermal fuse (overheating protection) cuts power to the dishwasher.  
+- **Steps to Fix:**  
+  1. **Unplug the dishwasher.**  
+  2. Locate the **thermal fuse** (often near the control board).  
+  3. Test for **continuity**—if **open**, replace it.  
+
+#### **6. Examine the Drive Motor**  
+- **Issue:** A failed motor prevents the dishwasher from running.  
+- **Steps to Fix:**  
+  1. **Disconnect power.**  
+  2. Access the **motor** (usually at the bottom of the unit).  
+  3. Check for **burn marks, unusual smells, or lack of power.**  
+  4. If faulty, replace the **drive motor.**  
+
+### **Final Notes**  
+- Always **unplug the dishwasher** before repairs.  
+- If unsure, consult a **professional technician.**  
+- Replace **only defective parts** with genuine replacements.  
+
+Let us know if you need further assistance!

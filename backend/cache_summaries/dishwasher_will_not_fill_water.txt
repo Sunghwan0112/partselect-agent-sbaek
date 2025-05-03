@@ -1,0 +1,34 @@
+### **How to Fix a Dishwasher That Won’t Fill With Water**  
+
+Follow these steps to diagnose and repair the issue:  
+
+#### **1. Check the Water Inlet Valve**  
+- **Unplug the dishwasher** and turn off the water supply.  
+- Locate the **water inlet valve** (usually on the lower left side behind an access panel).  
+- Inspect for **damage, cracks, or wear**.  
+- If faulty, replace the **water inlet valve**.  
+
+#### **2. Test the Float Assembly**  
+- The **float** prevents overfilling by rising with water levels.  
+- Manually lift the float—if the dishwasher still won’t fill, the float may be stuck or damaged.  
+- Clean any debris and ensure it moves freely. If broken, replace the **float assembly**.  
+
+#### **3. Inspect the Float Switch**  
+- The **float switch** signals the control board to stop filling when water reaches the correct level.  
+- Test with a multimeter for continuity. If defective, replace the **float switch**.  
+
+#### **4. Verify the Door Switch**  
+- If the door isn’t securely latched, the dishwasher won’t start filling.  
+- Check for proper alignment and test the switch with a multimeter. Replace if faulty.  
+
+#### **5. Ensure Proper Water Supply**  
+- Confirm the **water supply valve** is fully open.  
+- Check for **kinks in the inlet hose** or low water pressure.  
+
+If these steps don’t resolve the issue, further diagnosis may be needed for the control board or timer.  
+
+**Need parts?** Search for your model number to find the correct replacement.  
+
+[**Start Your Repair Here**]  
+
+*For visual guides, watch our step-by-step repair videos.*

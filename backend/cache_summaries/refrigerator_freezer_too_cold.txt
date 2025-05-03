@@ -1,0 +1,20 @@
+### **How to Fix a Refrigerator Freezer That’s Too Cold**  
+
+#### **1. Check the Air Damper or Freezer Control**  
+- **Unplug the refrigerator** for safety.  
+- Locate the **air damper or freezer control** (usually behind a vent in the fresh food compartment).  
+- Remove the vent and inspect the **damper flap** for damage or resistance when moving it.  
+- If the flap is stuck, damaged, or hard to move, **replace the air damper or freezer control**.  
+
+#### **2. Inspect the Temperature Sensor or Thermistor (Electronic Models Only)**  
+- If your fridge has an **electronic control**, a faulty **thermistor or temperature sensor** could cause incorrect cooling.  
+- Locate the sensor (often near the evaporator coils or inside the freezer).  
+- Test for continuity with a multimeter—if defective, **replace the sensor**.  
+
+#### **Next Steps**  
+- If neither part fixes the issue, check the **evaporator fan motor or defrost system**.  
+- Still too cold? **Consult a technician** for further diagnosis.  
+
+**Need parts?** Search for your model number to find the right replacement.  
+
+[**Shop Refrigerator Parts**](#)

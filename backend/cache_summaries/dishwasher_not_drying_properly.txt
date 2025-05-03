@@ -1,0 +1,36 @@
+### **How to Fix a Dishwasher That Won’t Dry Properly**  
+
+#### **1. Check the Heating Element**  
+- **Turn off power** to the dishwasher (unplug or shut off the circuit breaker).  
+- **Locate the heating element** (inside the dishwasher, at the bottom of the tub). It may be covered—remove the cover if needed.  
+- **Remove the lower access panel** to disconnect the wires from the heating element terminals.  
+- **Test for continuity** with a multimeter set to **Rx1**:  
+  - Touch each probe to a terminal.  
+  - A reading between **0 and infinity** (check your manual for exact specs) means it’s working.  
+  - If the reading is **exactly 0 or infinity**, the heating element is faulty and needs replacement.  
+
+#### **2. Inspect the High Limit Thermostat**  
+- The thermostat regulates the heating element’s temperature.  
+- **Disconnect power** and locate the thermostat (usually near the heating element).  
+- **Test for continuity** with a multimeter:  
+  - If there’s no continuity, replace the thermostat.  
+
+#### **3. Check the Rinse Aid Dispenser**  
+- Rinse aid helps dishes dry faster by reducing water spots.  
+- **Ensure the dispenser is filled** and functioning properly.  
+- **Clean the dispenser** if clogged.  
+
+#### **4. Run a Hot Water Cycle Before Starting**  
+- Ensure hot water is reaching the dishwasher by running the kitchen faucet until it’s hot before starting a cycle.  
+
+#### **5. Use the High-Temperature or Heated Dry Option**  
+- Select the **heated dry** or **sanitize** cycle if available.  
+
+If these steps don’t resolve the issue, further diagnosis or professional help may be needed.  
+
+**Need parts?**  
+- [Heating Element](link)  
+- [High Limit Thermostat](link)  
+- [Rinse Aid Dispenser](link)  
+
+For more help, visit our [Dishwasher Repair Hub](#).

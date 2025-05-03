@@ -1,0 +1,43 @@
+### **How to Fix a Refrigerator That Runs Too Long**  
+
+#### **1. Check the Defrost Timer**  
+- **Unplug the fridge** before starting.  
+- Locate the defrost timer (behind the kickplate, control panel, or back wall).  
+- Remove the timer and set a multimeter to **Rx1**.  
+- Touch one probe to the **common terminal (labeled "3" or "C")** and the other to each remaining terminal.  
+- If any pair shows **no continuity**, replace the timer.  
+
+#### **2. Test the Defrost Heater**  
+- Unplug the fridge.  
+- Locate the heater (usually behind the freezer’s back panel).  
+- Disconnect the heater wires and test for **continuity** with a multimeter.  
+- If there’s **no continuity**, replace the heater.  
+
+#### **3. Inspect the Defrost Termination Thermostat**  
+- Unplug the fridge.  
+- Locate the thermostat (near the evaporator coils).  
+- Test for continuity with a multimeter.  
+- If **no continuity**, replace the thermostat.  
+
+#### **4. Check Door Gaskets**  
+- Inspect the **fresh food and freezer door seals** for cracks or gaps.  
+- Close the door on a dollar bill—if it slides out easily, the gasket is weak.  
+- Replace damaged gaskets to maintain proper cooling efficiency.  
+
+#### **5. Test the Condenser Fan Motor**  
+- Unplug the fridge.  
+- Locate the fan (near the compressor at the back).  
+- Spin the fan blade—if it doesn’t move freely, the motor may be faulty.  
+- Test for continuity with a multimeter. If **no continuity**, replace the motor.  
+
+#### **6. Check the Evaporator Fan Motor**  
+- Unplug the fridge.  
+- Locate the fan (inside the freezer compartment).  
+- Test for continuity with a multimeter.  
+- If **no continuity**, replace the motor.  
+
+#### **7. Inspect the Sealed System (Advanced Repair)**  
+- If all other parts check out, the issue may be a **refrigerant leak or compressor failure**.  
+- This requires a **professional technician** for diagnosis and repair.  
+
+**Note:** Always **unplug the refrigerator** before testing or replacing parts. If unsure, consult a technician.

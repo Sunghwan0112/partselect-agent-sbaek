@@ -1,0 +1,15 @@
+### **How to Fix a Refrigerator That’s Too Warm**  
+
+#### **1. Check the Air Inlet Damper or Baffle**  
+- **Step 1:** Unplug the refrigerator for safety.  
+- **Step 2:** Locate the air damper/baffle where cold air enters the fridge (usually near the top or back).  
+- **Step 3:** Inspect the damper for damage or obstructions.  
+- **Step 4:** Test the control knob to ensure the linkage moves freely.  
+- **Step 5:** If the damper is stuck closed or broken, replace it.  
+
+#### **Additional Quick Checks**  
+- **Clean the Condenser Coils** (dust buildup can reduce cooling).  
+- **Ensure Proper Door Seals** (worn seals let cold air escape).  
+- **Check the Evaporator Fan** (if it’s not running, cold air won’t circulate).  
+
+If the issue persists after these steps, further diagnosis may be needed.
